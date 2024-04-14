@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    command: python3 bot.py
+    volumes:
+      - .:/app
+    environment:
+      - TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+      - TELEGRAM_CHAT_ID=YOUR_TELEGRAM_CHAT_ID
+
+  database:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: YOUR_POSTGRES_USER
+      POSTGRES_PASSWORD: YOUR_POSTGRES_PASSWORD
+      POSTGRES_DB: YOUR_POSTGRES_DB
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
