@@ -1,0 +1,34 @@
+{
+  "author": "Delemangi",
+  "bugs": {
+    "url": "https://github.com/Delemangi/echo-discord-bot/issues"
+  },
+  "dependencies": {
+  },
+  "description": "Echo Discord Bot",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "homepage": "https://github.com/Delemangi/echo-discord-bot",
+  "license": "MIT",
+  "main": "src/main.ts",
+  "name": "echo-discord-bot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Delemangi/echo-discord-bot.git"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "nodemon",
+    "format": "eslint . --ext .ts --fix",
+    "generate": "prisma generate",
+    "lint": "eslint . --ext .ts --cache",
+    "migrate": "prisma migrate dev --name a",
+    "prepare": "husky",
+    "start": "node dist/main.js"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
