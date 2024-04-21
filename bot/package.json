@@ -23,9 +23,7 @@
     "build": "rimraf dist && tsc",
     "dev": "nodemon",
     "format": "eslint . --ext .ts --fix",
-    "generate": "prisma generate",
     "lint": "eslint . --ext .ts --cache",
-    "migrate": "prisma migrate dev --name a",
     "prepare": "husky",
     "start": "node dist/main.js"
   },
