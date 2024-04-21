@@ -7,6 +7,8 @@
   },
   "description": "Echo Discord Bot",
   "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-canonical": "^42.8.2",
     "husky": "^9.0.11"
   },
   "engines": {
