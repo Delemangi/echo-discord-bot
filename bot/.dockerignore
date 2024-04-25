@@ -1,0 +1,16 @@
+# NPM
+node_modules
+
+# Development
+.editorconfig
+.env
+nodemon.json
+
+# ESLint
+.eslintcache
+.eslintrc.json
+.eslintignore
+
+# Git
+.gitignore
+.gitattributes
