@@ -2,7 +2,7 @@
 
 Echo Discord Bot is a Discord bot that provides FAQ functionality. It's powered by [discord.js](https://github.com/discordjs/discord.js) v14 and Strapi v4.
 
-It's recommended to run this application in a DOcker environment if you wish to retain your sanity.
+It's recommended to run this application in a Docker environment if you wish to retain your sanity.
 
 ## Installation
 
