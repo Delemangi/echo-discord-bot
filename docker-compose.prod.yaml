@@ -1,12 +1,9 @@
-name: echo-discord-bot-dev
+name: echo-discord-bot
 
 services:
   bot:
-    container_name: echo-discord-bot-dev
-    image: echo-discord-bot-dev:latest
-    build:
-      context: ./bot
-      dockerfile: Dockerfile
+    container_name: echo-discord-bot
+    image: delemangi/echo-discord-bot:latest
     restart: unless-stopped
     environment:
       TOKEN: ${TOKEN}
@@ -16,11 +13,8 @@ services:
       - strapi
 
   strapi:
-    container_name: echo-strapi-dev
-    image: echo-strapi-dev:latest
-    build:
-      context: ./api
-      dockerfile: Dockerfile.dev
+    container_name: echo-strapi
+    image: delemangi/echo-strapi:latest
     restart: unless-stopped
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
@@ -39,16 +33,12 @@ services:
     ports:
       - ${PORT}:${PORT}
     volumes:
-      - ./api/src:/opt/app/src
-      - ./api/config:/opt/app/config
-      - ./api/public/uploads:/opt/app/public/uploads
-      - ./api/package.json:/opt/package.json
-      - ./api/package-lock.json:/opt/package-lock.json
+      - ./public/uploads:/opt/app/public/uploads
     depends_on:
       - database
 
   database:
-    container_name: echo-postgres-dev
+    container_name: echo-postgres
     image: postgres:16
     restart: unless-stopped
     environment:

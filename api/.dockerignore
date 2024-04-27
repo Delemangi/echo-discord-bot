@@ -1,0 +1,23 @@
+# NPM
+node_modules/
+
+# Strapi
+.tmp/
+.cache/
+build/
+data/
+backup/
+
+# Development
+.editorconfig
+.env
+
+# ESLint
+.eslintcache
+.eslintrc
+.eslintignore
+
+# Git
+.git/
+.gitignore
+.gitattributes
