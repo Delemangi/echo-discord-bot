@@ -4,7 +4,7 @@ import { QuestionSchema } from '../schemas/QuestionSchema.js';
 export const getQuestionsByTerm = async (term: string) => {
   const strapiUrl = getStrapiUrl();
   const questions = await fetch(
-    `${strapiUrl}/api/questions?filters[Name][$containss]=${term}`,
+    `${strapiUrl}/api/questions?filters[name][$containsi]=${term}`,
   );
   const parsedData = await questions.json();
   const parsedQuestions = QuestionSchema.parse(parsedData);

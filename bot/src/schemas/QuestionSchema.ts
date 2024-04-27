@@ -2,10 +2,10 @@ import { z } from 'zod';
 
 const RawQuestionSchema = z
   .object({
-    Content: z.string(),
+    content: z.string(),
     createdAt: z.string(),
-    Links: z.record(z.string()).nullable(),
-    Name: z.string(),
+    links: z.record(z.string()).nullable(),
+    name: z.string(),
     publishedAt: z.string(),
     updatedAt: z.string(),
   })

@@ -9,7 +9,7 @@ export const handleFaqAutocomplete = async (
 ) => {
   const searchTerm = interaction.options.getFocused();
   const questions = await getQuestionsByTerm(searchTerm);
-  const questionNames = questions.map((question) => question.Name);
+  const questionNames = questions.map((question) => question.name);
   const transformedQuestionNames = Object.entries(
     transformOptions(questionNames),
   );
