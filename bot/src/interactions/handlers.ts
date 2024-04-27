@@ -22,7 +22,7 @@ export const handleChatInputCommand = async (
   const command = await getCommand(interaction.commandName);
 
   logger.info(
-    `${labels.chat} ${interaction.user.tag}: ${interaction} [${
+    `[${labels.chat}] ${interaction.user.tag}: ${interaction} [${
       interaction.channel === null || interaction.channel.isDMBased()
         ? labels.dm
         : labels.guild
@@ -57,7 +57,7 @@ export const handleAutocompleteCommand = async (
   const option = interaction.options.getFocused(true);
 
   logger.info(
-    `${labels.autocomplete} ${interaction.user.tag}: ${option.name} [${
+    `[${labels.autocomplete}] ${interaction.user.tag}: ${option.name} [${
       interaction.channel === null || interaction.channel.isDMBased()
         ? labels.dm
         : labels.guild
