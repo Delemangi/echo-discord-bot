@@ -3,10 +3,10 @@ import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
 export const getQuestionText = (question: Question) => {
   return `
-  __## ${question.name}__
+  __## ${question.name.trim()}__
 
-  ${question.content}
-  `;
+  ${question.content.trim()}
+  `.trim();
 };
 
 export const getQuestionButtons = (question: Question) => {
