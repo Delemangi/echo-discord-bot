@@ -53,7 +53,8 @@ const RawQuestionSchema = z
           )
           .nullable(),
       })
-      .strict(),
+      .strict()
+      .optional(),
     links: z.record(z.string()).nullable(),
     name: z.string(),
     publishedAt: z.string(),
