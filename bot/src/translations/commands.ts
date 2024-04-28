@@ -1,3 +1,4 @@
 export const commands = {
-  faq: 'Get a list of frequently asked questions.',
+  faq: 'Get a frequently asked question.',
+  question: 'Get a frequently asked question.',
 };
