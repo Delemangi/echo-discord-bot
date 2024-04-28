@@ -3,28 +3,44 @@ import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
 export const getQuestionText = (question: Question) => {
   return `
-  __## ${question.name.trim()}__
-
-  ${question.content.trim()}
-  `.trim();
+__## ${question.name.trim()}__
+${question.content.trim()}`.trim();
 };
 
 export const getQuestionButtons = (question: Question) => {
-  const row = new ActionRowBuilder<ButtonBuilder>();
+  const components = [];
 
   if (question.links === null) {
-    return row;
+    return [];
   }
 
-  for (const [label, url] of Object.entries(question.links)) {
-    const button = new ButtonBuilder()
-      .setStyle(ButtonStyle.Link)
-      .setEmoji('🔗')
-      .setLabel(label)
-      .setURL(url);
+  const links = Object.entries(question.links);
 
-    row.addComponents(button);
+  for (let index1 = 0; index1 < links.length; index1 += 5) {
+    const row = new ActionRowBuilder<ButtonBuilder>();
+    const buttons = [];
+
+    for (let index2 = index1; index2 < index1 + 5; index2++) {
+      const link = links[index2];
+
+      if (link === undefined) {
+        break;
+      }
+
+      const [name, url] = link;
+
+      const button = new ButtonBuilder()
+        .setStyle(ButtonStyle.Link)
+        .setEmoji('🔗')
+        .setLabel(name)
+        .setURL(url.startsWith('http') ? url : `https://${url}`);
+
+      buttons.push(button);
+    }
+
+    row.addComponents(buttons);
+    components.push(row);
   }
 
-  return row;
+  return components;
 };

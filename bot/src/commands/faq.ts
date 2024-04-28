@@ -34,7 +34,7 @@ export const execute = async (interaction: ChatInputCommandInteraction) => {
   const messageButtons = getQuestionButtons(question);
 
   await interaction.editReply({
-    components: [messageButtons],
+    components: messageButtons,
     content: messageContent,
   });
 };
