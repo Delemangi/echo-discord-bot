@@ -1,7 +1,7 @@
 import { getQuestionsByTerm } from '../data/questions.js';
 import { commands } from '../translations/commands.js';
 import { errors } from '../translations/errors.js';
-import { getQuestionFormat } from '../utils/format.js';
+import { getQuestionButtons, getQuestionText } from '../utils/questions.js';
 import {
   type ChatInputCommandInteraction,
   SlashCommandBuilder,
@@ -30,7 +30,11 @@ export const execute = async (interaction: ChatInputCommandInteraction) => {
     return;
   }
 
-  const questionFormat = getQuestionFormat(question);
+  const messageContent = getQuestionText(question);
+  const messageButtons = getQuestionButtons(question);
 
-  await interaction.editReply(questionFormat);
+  await interaction.editReply({
+    components: [messageButtons],
+    content: messageContent,
+  });
 };
