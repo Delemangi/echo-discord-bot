@@ -1,6 +1,6 @@
 # Echo Discord Bot
 
-Echo Discord Bot is a Discord bot that provides FAQ functionality. It's powered by [discord.js](https://github.com/discordjs/discord.js) v14, Strapi v4 and PostgreSQL v16.
+Echo Discord Bot is a Discord bot that provides FAQ functionality. It's powered by [discord.js](https://github.com/discordjs/discord.js) v14, [Strapi](https://github.com/strapi/strapi) v4 and PostgreSQL v16.
 
 It's recommended to run this application in a Docker environment if you wish to retain your sanity.
 
