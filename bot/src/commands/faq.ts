@@ -1,7 +1,11 @@
 import { getQuestionsByTerm } from '../data/questions.js';
 import { commands } from '../translations/commands.js';
 import { errors } from '../translations/errors.js';
-import { getQuestionButtons, getQuestionText } from '../utils/questions.js';
+import {
+  getQuestionButtons,
+  getQuestionFiles,
+  getQuestionText,
+} from '../utils/questions.js';
 import {
   type ChatInputCommandInteraction,
   SlashCommandBuilder,
@@ -32,9 +36,14 @@ export const execute = async (interaction: ChatInputCommandInteraction) => {
 
   const messageContent = getQuestionText(question);
   const messageButtons = getQuestionButtons(question);
+  const files = getQuestionFiles(question);
 
   await interaction.editReply({
     components: messageButtons,
     content: messageContent,
+    files: files.map((file) => ({
+      attachment: file.url,
+      name: file.name,
+    })),
   });
 };

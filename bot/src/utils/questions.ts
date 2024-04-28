@@ -1,3 +1,4 @@
+import { getStrapiUrl } from '../config/environment.js';
 import { type Question } from '../schemas/QuestionSchema.js';
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
@@ -43,4 +44,19 @@ export const getQuestionButtons = (question: Question) => {
   }
 
   return components;
+};
+
+export const getQuestionFiles = (question: Question) => {
+  if (question.files.data === null) {
+    return [];
+  }
+
+  const strapiUrl = getStrapiUrl();
+
+  return question.files.data.map((file) => {
+    return {
+      name: file.attributes.name,
+      url: `${strapiUrl}${file.attributes.url}`,
+    };
+  });
 };
