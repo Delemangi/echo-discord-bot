@@ -52,7 +52,6 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs:
       - eslint
-      - sonarcloud
 
     steps:
       - name: Set up QEMU
@@ -79,8 +78,6 @@ jobs:
     name: Docker Image (Strapi)
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs:
-      - sonarcloud
 
     steps:
       - name: Set up QEMU
