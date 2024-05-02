@@ -13,7 +13,7 @@ COPY . .
 RUN npm run build
 
 # Build Sharp stage
-FROM --platform=${TARGETPLATFORM} node:20-alpine AS build-Sharp
+FROM --platform=${TARGETPLATFORM} node:20-alpine AS build-sharp
 RUN apk add --no-cache build-base gcc vips-dev >/dev/null 2>&1
 
 WORKDIR /opt/
