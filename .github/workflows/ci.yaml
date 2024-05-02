@@ -71,7 +71,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/arm
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/echo-discord-bot:latest
           context: "{{defaultContext}}:bot"
 
@@ -99,7 +99,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/arm
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/echo-strapi:latest
           context: "{{defaultContext}}:api"
           file: Dockerfile.prod
