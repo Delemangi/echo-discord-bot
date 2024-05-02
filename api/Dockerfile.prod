@@ -13,11 +13,13 @@ COPY . .
 RUN npm run build
 
 # Build Sharp stage
-FROM --platform=${TARGETPLATFORM} node:20-alpine AS build-sharp
-WORKDIR /opt/
+FROM --platform=${TARGETPLATFORM} node:20-alpine AS build-Sharp
+RUN apk add --no-cache build-base gcc vips-dev >/dev/null 2>&1
 
+WORKDIR /opt/
 COPY package.json package-lock.json ./
-RUN npm i sharp
+RUN npm i -g node-addon-api node-gyp
+RUN npm i sharp --build-from-source
 
 # Production stage
 FROM --platform=${TARGETPLATFORM} node:20-alpine AS production
@@ -26,7 +28,7 @@ ENV NODE_ENV=production
 
 WORKDIR /opt/
 COPY --from=build /opt/node_modules ./node_modules
-COPY --from=build-sharp /opt/node_modules/sharp ./node_modules/sharp
+COPY --from=build-sharp /opt/node_modules ./node_modules
 
 WORKDIR /opt/app
 COPY --from=build /opt/app ./
