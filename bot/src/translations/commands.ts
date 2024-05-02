@@ -1,5 +1,6 @@
 export const commands = {
-  faq: 'Get a frequently asked question.',
+  ask: 'Ask a question.',
+  faq: 'Ask a question.',
   list: 'List all available questions.',
-  question: 'Get a frequently asked question.',
+  question: 'Ask a question.',
 };
