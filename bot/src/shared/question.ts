@@ -38,13 +38,17 @@ export const getCommonCommand = (name: keyof typeof commands): Command => ({
     const messageButtons = getQuestionButtons(question);
     const files = getQuestionFiles(question);
 
-    await interaction.editReply({
-      components: messageButtons,
-      content: messageContent,
-      files: files.map((file) => ({
-        attachment: file.url,
-        name: file.name,
-      })),
-    });
+    try {
+      await interaction.editReply({
+        components: messageButtons,
+        content: messageContent,
+        files: files.map((file) => ({
+          attachment: file.url,
+          name: file.name,
+        })),
+      });
+    } catch {
+      await interaction.editReply(errors.questionNotDefinedCorrectly);
+    }
   },
 });

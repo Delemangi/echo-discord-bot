@@ -9,5 +9,6 @@ export const errors = {
   noStrapiUrl:
     'No Strapi URL provided. Please provide a Strapi URL in the .env file.',
   noToken: 'No token provided. Please provide a token in the .env file.',
+  questionNotDefinedCorrectly: 'Question not defined correctly.',
   questionNotFound: 'Question not found.',
 };

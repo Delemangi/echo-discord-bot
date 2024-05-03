@@ -30,17 +30,13 @@ export const getQuestionButtons = (question: Question) => {
 
       const [name, url] = link;
 
-      try {
-        const button = new ButtonBuilder()
-          .setStyle(ButtonStyle.Link)
-          .setEmoji('🔗')
-          .setLabel(name)
-          .setURL(url.startsWith('http') ? url : `https://${url}`);
+      const button = new ButtonBuilder()
+        .setStyle(ButtonStyle.Link)
+        .setEmoji('🔗')
+        .setLabel(name)
+        .setURL(url.startsWith('http') ? url : `https://${url}`);
 
-        buttons.push(button);
-      } catch {
-        continue;
-      }
+      buttons.push(button);
     }
 
     row.addComponents(buttons);
