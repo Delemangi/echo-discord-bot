@@ -4,21 +4,21 @@
     "url": "https://github.com/Delemangi/echo-discord-bot/issues"
   },
   "dependencies": {
-    "discord-api-types": "^0.37.83",
+    "discord-api-types": "^0.37.86",
     "discord.js": "^14.15.2",
     "dotenv": "^16.4.5",
     "winston": "^3.13.0",
-    "zod": "^3.23.6"
+    "zod": "^3.23.8"
   },
   "description": "Echo Discord Bot",
   "devDependencies": {
-    "@swc/core": "^1.5.3",
+    "@swc/core": "^1.5.24",
     "@swc/helpers": "^0.5.11",
     "eslint": "^8.57.0",
     "eslint-config-canonical": "^42.8.2",
     "husky": "^9.0.11",
-    "nodemon": "^3.1.0",
-    "rimraf": "^5.0.5",
+    "nodemon": "^3.1.2",
+    "rimraf": "^5.0.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
@@ -37,7 +37,7 @@
     "build": "rimraf dist && tsc",
     "dev": "nodemon",
     "format": "eslint . --ext .ts --fix",
-    "lint": "eslint . --ext .ts --cache",
+    "lint": "tsc --noEmit && eslint . --ext .ts --cache",
     "prepare": "cd .. && husky bot/.husky",
     "start": "node dist/main.js"
   },
