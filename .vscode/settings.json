@@ -1,5 +1,9 @@
 {
   "eslint.workingDirectories": [
     "./bot"
-  ]
+  ],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "delemangi",
+    "projectKey": "echo-discord-bot"
+  }
 }
