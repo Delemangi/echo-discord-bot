@@ -1,5 +1,4 @@
 import { errors } from '../translations/errors.js';
-// eslint-disable-next-line n/prefer-global/process
 import { env } from 'node:process';
 
 export const getBotCredentials = () => {
