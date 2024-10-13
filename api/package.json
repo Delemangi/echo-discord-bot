@@ -10,15 +10,14 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "^4.25.11",
-    "@strapi/plugin-i18n": "^4.25.13",
-    "@strapi/plugin-users-permissions": "^4.25.11",
-    "@strapi/strapi": "^4.25.13",
+    "@strapi/plugin-cloud": "^5.0.6",
+    "@strapi/plugin-users-permissions": "^5.0.6",
+    "@strapi/strapi": "^5.0.6",
     "pg": "^8.13.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "author": {
     "name": "A Strapi developer"
