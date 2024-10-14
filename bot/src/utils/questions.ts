@@ -47,17 +47,17 @@ export const getQuestionButtons = (question: Question) => {
 };
 
 export const getQuestionFiles = (question: Question) => {
-  if (question.files?.data === null) {
+  if (question.files === null) {
     return [];
   }
 
   const strapiUrl = getStrapiUrl();
 
   return (
-    question.files?.data.map((file) => {
+    question.files.map((file) => {
       return {
-        name: file.attributes.name,
-        url: `${strapiUrl}${file.attributes.url}`,
+        name: file.name,
+        url: `${strapiUrl}${file.url}`,
       };
     }) ?? []
   );

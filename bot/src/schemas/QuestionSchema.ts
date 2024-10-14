@@ -17,61 +17,49 @@ const FormatSchema = z
   })
   .strict();
 
-const RawQuestionSchema = z
+const FileSchema = z
+  .object({
+    alternativeText: z.string().nullable(),
+    caption: z.string().nullable(),
+    createdAt: z.string(),
+    documentId: z.string(),
+    ext: z.string(),
+    formats: z.record(Formats, FormatSchema).nullable(),
+    hash: z.string(),
+    height: z.number().nullable(),
+    id: z.number(),
+    locale: z.string().nullable(),
+    mime: z.string(),
+    name: z.string(),
+    previewUrl: z.string().nullable(),
+    provider: z.string(),
+    provider_metadata: z.string().nullable(),
+    publishedAt: z.string(),
+    size: z.number(),
+    updatedAt: z.string(),
+    url: z.string(),
+    width: z.number().nullable(),
+  })
+  .strict();
+
+const QuestionSchema = z
   .object({
     content: z.string(),
     createdAt: z.string(),
-    files: z
-      .object({
-        data: z
-          .array(
-            z
-              .object({
-                attributes: z
-                  .object({
-                    alternativeText: z.string().nullable(),
-                    caption: z.string().nullable(),
-                    createdAt: z.string(),
-                    ext: z.string(),
-                    formats: z.record(Formats, FormatSchema).nullable(),
-                    hash: z.string(),
-                    height: z.number().nullable(),
-                    mime: z.string(),
-                    name: z.string(),
-                    previewUrl: z.string().nullable(),
-                    provider: z.string(),
-                    provider_metadata: z.string().nullable(),
-                    size: z.number(),
-                    updatedAt: z.string(),
-                    url: z.string(),
-                    width: z.number().nullable(),
-                  })
-                  .strict(),
-                id: z.number(),
-              })
-              .strict(),
-          )
-          .nullable(),
-      })
-      .strict()
-      .optional(),
+    documentId: z.string(),
+    files: z.array(FileSchema).nullable(),
+    id: z.number(),
     links: z.record(z.string()).nullable(),
+    locale: z.string().nullable(),
     name: z.string(),
     publishedAt: z.string(),
     updatedAt: z.string(),
   })
   .strict();
 
-export const QuestionSchema = z
+export const StrapiQuestionSchema = z
   .object({
-    data: z.array(
-      z
-        .object({
-          attributes: RawQuestionSchema,
-          id: z.number(),
-        })
-        .strict(),
-    ),
+    data: z.array(QuestionSchema),
     meta: z
       .object({
         pagination: z
@@ -87,4 +75,4 @@ export const QuestionSchema = z
   })
   .strict();
 
-export type Question = z.infer<typeof RawQuestionSchema>;
+export type Question = z.infer<typeof QuestionSchema>;
