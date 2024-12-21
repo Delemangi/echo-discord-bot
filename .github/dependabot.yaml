@@ -1,11 +1,6 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/api"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "npm"
     directory: "/bot"
     schedule:
       interval: "daily"
