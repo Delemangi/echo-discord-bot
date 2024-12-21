@@ -1,6 +1,5 @@
-# Build stage
 FROM --platform=${BUILDPLATFORM} node:20-alpine AS build
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev >/dev/null 2>&1
+RUN apk update && apk add --no-cache autoconf automake build-base gcc libpng-dev vips-dev zlib-dev >/dev/null 2>&1
 ENV NODE_ENV=production
 
 WORKDIR /opt/
@@ -12,17 +11,14 @@ WORKDIR /opt/app
 COPY . .
 RUN npm run build
 
-# Build Sharp stage
 FROM --platform=${TARGETPLATFORM} node:20-alpine AS build-sharp
 RUN apk add --no-cache build-base gcc vips-dev >/dev/null 2>&1
 
 WORKDIR /opt/
 COPY package.json package-lock.json ./
-RUN npm i -g node-addon-api node-gyp
-RUN npm i sharp --build-from-source
+RUN npm i -g node-addon-api node-gyp && npm i sharp --build-from-source
 
-# Production stage
-FROM --platform=${TARGETPLATFORM} node:20-alpine AS production
+FROM --platform=${TARGETPLATFORM} node:20-alpine AS final
 RUN apk add --no-cache vips-dev
 ENV NODE_ENV=production
 
