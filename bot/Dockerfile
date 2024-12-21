@@ -13,6 +13,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm i --production --ignore-scripts && npm cache clean --force
 
-COPY --from=development /app/dist ./dist
+COPY --from=build /app/dist ./dist
 
 CMD [ "npm", "run", "start" ]
