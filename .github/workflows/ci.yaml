@@ -32,22 +32,6 @@ jobs:
           cd bot
           npm run lint
 
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
   docker-bot:
     name: Docker Image (Bot)
     runs-on: ubuntu-latest
