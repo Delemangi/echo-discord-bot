@@ -18,7 +18,7 @@ The project is available as a Docker image on DockerHub as `delemangi/echo-disco
 
 Using the provided production Docker Compose setup:
 
-1. Download the `docker-compose.prod.yaml` from the repository, put it in a folder and rename it to `docker-compose.yaml`
+1. Download the `compose.prod.yaml` from the repository, put it in a folder and rename it to `compose.yaml`
 2. Pull the images: `docker compose pull`
 
 Using the repository:
@@ -40,7 +40,7 @@ Using the repository:
 
 ### Running (Docker)
 
-Regardless of the Docker steps you have followed above for installation, run `docker compose up -d`, provided that you have a `docker-compose.yaml` file ready.
+Regardless of the Docker steps you have followed above for installation, run `docker compose up -d`, provided that you have a `compose.yaml` file ready.
 
 ### Running (Normal)
 
