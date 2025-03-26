@@ -1,8 +1,9 @@
+import { Collection, REST, Routes } from 'discord.js';
+import { readdirSync } from 'node:fs';
+
 import { messages } from '../translations/messages.js';
 import { type Command } from '../types/Command.js';
 import { logger } from './logger.js';
-import { Collection, REST, Routes } from 'discord.js';
-import { readdirSync } from 'node:fs';
 
 const commands = new Collection<string, Command>();
 
@@ -14,14 +15,13 @@ const refreshCommands = async () => {
   commands.clear();
 
   for (const file of commandFiles) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const command: Command = await import(`../commands/${file}`);
     commands.set(command.data.name, command);
   }
 };
 
-const isCommandsEmpty = () => {
-  return commands.entries().next().done;
-};
+const isCommandsEmpty = () => commands.entries().next().done;
 
 const getCommands = async () => {
   if (isCommandsEmpty()) {

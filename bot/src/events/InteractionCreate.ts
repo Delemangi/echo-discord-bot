@@ -1,8 +1,9 @@
+import { type ClientEvents, Events } from 'discord.js';
+
 import {
   handleAutocompleteCommand,
   handleChatInputCommand,
 } from '../interactions/handlers.js';
-import { type ClientEvents, Events } from 'discord.js';
 
 export const name = Events.InteractionCreate;
 

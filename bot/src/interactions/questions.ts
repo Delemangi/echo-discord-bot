@@ -1,8 +1,9 @@
+import { type AutocompleteInteraction } from 'discord.js';
+
 import { getQuestionsByTerm } from '../data/questions.js';
 import { errors } from '../translations/errors.js';
 import { logger } from '../utils/logger.js';
 import { createOptions, transformOptions } from './options.js';
-import { type AutocompleteInteraction } from 'discord.js';
 
 export const handleFaqAutocomplete = async (
   interaction: AutocompleteInteraction,

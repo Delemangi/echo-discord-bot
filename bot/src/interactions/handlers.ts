@@ -1,12 +1,13 @@
+import {
+  type AutocompleteInteraction,
+  type ChatInputCommandInteraction,
+} from 'discord.js';
+
 import { errors } from '../translations/errors.js';
 import { labels } from '../translations/labels.js';
 import { getCommand } from '../utils/commands.js';
 import { logger } from '../utils/logger.js';
 import { handleFaqAutocomplete } from './questions.js';
-import {
-  type AutocompleteInteraction,
-  type ChatInputCommandInteraction,
-} from 'discord.js';
 
 export const handleChatInputCommand = async (
   interaction: ChatInputCommandInteraction,
@@ -22,7 +23,7 @@ export const handleChatInputCommand = async (
   const command = await getCommand(interaction.commandName);
 
   logger.info(
-    `[${labels.chat}] ${interaction.user.tag}: ${interaction} [${
+    `[${labels.chat}] ${interaction.user.tag}: ${interaction.toString()} [${
       interaction.channel === null || interaction.channel.isDMBased()
         ? labels.dm
         : labels.guild

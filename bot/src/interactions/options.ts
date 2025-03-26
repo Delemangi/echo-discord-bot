@@ -1,5 +1,3 @@
-/* eslint-disable id-length */
-
 const transformations = {
   а: ['a'],
   А: ['A'],
@@ -68,11 +66,7 @@ const transformations = {
 const transformWords = (word: string) => {
   let suffixes: string[] = [];
 
-  if (word.length === 1) {
-    suffixes = [''];
-  } else {
-    suffixes = transformWords(word.slice(1));
-  }
+  suffixes = word.length === 1 ? [''] : transformWords(word.slice(1));
 
   const transformedWords: string[] = [];
 
@@ -100,8 +94,8 @@ export const transformOptions = (options: string[]) => {
   return results;
 };
 
-export const createOptions = (options: Array<[string, string]>) => {
-  return options
+export const createOptions = (options: Array<[string, string]>) =>
+  options
     .map(([, value]) => ({
       name: value,
       value,
@@ -111,4 +105,3 @@ export const createOptions = (options: Array<[string, string]>) => {
         array.findIndex((item) => item.name === element.name) === index,
     )
     .slice(0, 25);
-};

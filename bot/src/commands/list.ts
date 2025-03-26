@@ -1,9 +1,10 @@
-import { getAllQuestions } from '../data/questions.js';
-import { commands } from '../translations/commands.js';
 import {
   type ChatInputCommandInteraction,
   SlashCommandBuilder,
 } from 'discord.js';
+
+import { getAllQuestions } from '../data/questions.js';
+import { commands } from '../translations/commands.js';
 
 const name = 'list';
 

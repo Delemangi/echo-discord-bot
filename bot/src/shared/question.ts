@@ -1,3 +1,8 @@
+import {
+  type ChatInputCommandInteraction,
+  SlashCommandBuilder,
+} from 'discord.js';
+
 import { getQuestionsByTerm } from '../data/questions.js';
 import { commands } from '../translations/commands.js';
 import { errors } from '../translations/errors.js';
@@ -7,10 +12,6 @@ import {
   getQuestionFiles,
   getQuestionText,
 } from '../utils/questions.js';
-import {
-  type ChatInputCommandInteraction,
-  SlashCommandBuilder,
-} from 'discord.js';
 
 export const getCommonCommand = (name: keyof typeof commands): Command => ({
   data: new SlashCommandBuilder()

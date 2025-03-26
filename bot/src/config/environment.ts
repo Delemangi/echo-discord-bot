@@ -1,9 +1,10 @@
+/* eslint-disable n/no-process-env */
+
 import { errors } from '../translations/errors.js';
-import { env } from 'node:process';
 
 export const getBotCredentials = () => {
-  const token = env['TOKEN'];
-  const applicationId = env['APPLICATION_ID'];
+  const token = process.env['TOKEN'];
+  const applicationId = process.env['APPLICATION_ID'];
 
   if (!token) {
     throw new Error(errors.noToken);
@@ -20,7 +21,7 @@ export const getBotCredentials = () => {
 };
 
 export const getStrapiUrl = () => {
-  const url = env['STRAPI_URL'];
+  const url = process.env['STRAPI_URL'];
 
   if (!url) {
     throw new Error(errors.noStrapiUrl);

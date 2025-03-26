@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 import { z } from 'zod';
 
 const Formats = z.enum(['large', 'medium', 'small', 'thumbnail']);
