@@ -14,7 +14,7 @@ For development purposes, be sure to run `npm run prepare` to install the Git pr
 
 ### Installation (Docker)
 
-The project is available as a Docker image on DockerHub as `delemangi/echo-discord-bot` and `delemangi/echo-strapi`. Beware that there are two (three with PostgreSQL) Docker images which have to be running at the same time.
+The project is available as a Docker image on GHCR as `finki-hub/echo-discord-bot` and `finki-hub/echo-strapi`. Beware that there are two (three with PostgreSQL) Docker images which have to be running at the same time.
 
 Using the provided production Docker Compose setup:
 
@@ -23,12 +23,12 @@ Using the provided production Docker Compose setup:
 
 Using the repository:
 
-1. Clone the repository: `git clone git@github.com:Delemangi/echo-discord-bot.git`
+1. Clone the repository: `git clone git@github.com:finki-hub/echo-discord-bot.git`
 2. Build the images: `docker compose build`
 
 ### Installation (Normal)
 
-1. Clone the repository: `git clone git@github.com:Delemangi/echo-discord-bot.git`
+1. Clone the repository: `git clone git@github.com:finki-hub/echo-discord-bot.git`
 2. Go to the bot subdirectory: `cd bot`
 3. Install the Discord bot dependencies: `npm i`
 4. Build the project: `npm run build`

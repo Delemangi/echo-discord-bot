@@ -62,7 +62,7 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/delemangi/echo-discord-bot:${{ github.ref == 'refs/heads/main' && 'latest' || 'dev' }}
+          tags: ghcr.io/finki-hub/echo-discord-bot:${{ github.ref == 'refs/heads/main' && 'latest' || 'dev' }}
           context: "{{defaultContext}}:bot"
 
   docker-strapi:
@@ -93,6 +93,6 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/delemangi/echo-strapi:${{ github.ref == 'refs/heads/main' && 'latest' || 'dev' }}
+          tags: ghcr.io/finki-hub/echo-strapi:${{ github.ref == 'refs/heads/main' && 'latest' || 'dev' }}
           context: "{{defaultContext}}:api"
           file: Dockerfile.prod

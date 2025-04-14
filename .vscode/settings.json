@@ -3,7 +3,7 @@
     "./bot"
   ],
   "sonarlint.connectedMode.project": {
-    "connectionId": "delemangi",
+    "connectionId": "finki-hub",
     "projectKey": "echo-discord-bot"
   }
 }

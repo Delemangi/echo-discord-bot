@@ -3,7 +3,7 @@ name: echo-discord-bot
 services:
   bot:
     container_name: echo-discord-bot
-    image: ghcr.io/delemangi/echo-discord-bot:latest
+    image: ghcr.io/finki-hub/echo-discord-bot:latest
     restart: unless-stopped
     environment:
       TOKEN: ${TOKEN}
@@ -14,7 +14,7 @@ services:
 
   strapi:
     container_name: echo-strapi
-    image: ghcr.io/delemangi/echo-strapi:latest
+    image: ghcr.io/finki-hub/echo-strapi:latest
     restart: unless-stopped
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
