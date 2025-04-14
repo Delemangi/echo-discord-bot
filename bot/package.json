@@ -4,23 +4,23 @@
     "url": "https://github.com/Delemangi/echo-discord-bot/issues"
   },
   "dependencies": {
-    "discord-api-types": "^0.37.119",
+    "discord-api-types": "^0.37.120",
     "discord.js": "^14.18.0",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
     "winston": "^3.17.0",
     "zod": "^3.24.2"
   },
   "description": "Echo Discord Bot",
   "devDependencies": {
-    "@swc/core": "^1.11.13",
+    "@swc/core": "^1.11.21",
     "@swc/helpers": "^0.5.15",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-imperium": "^2.2.0",
     "husky": "^9.1.7",
     "nodemon": "^3.1.9",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8.3"
   },
   "engines": {
     "node": ">=20.0.0"
