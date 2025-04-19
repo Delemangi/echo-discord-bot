@@ -3,13 +3,11 @@ node_modules
 
 # Development
 .editorconfig
-.env
-nodemon.json
+.env*
 
 # ESLint
 .eslintcache
-.eslintrc.json
-.eslintignore
+eslint.config.json
 
 # Git
 .gitignore
