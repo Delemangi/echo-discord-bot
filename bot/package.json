@@ -12,14 +12,11 @@
   },
   "description": "Echo Discord Bot",
   "devDependencies": {
-    "@swc/core": "^1.11.21",
-    "@swc/helpers": "^0.5.15",
     "eslint": "^9.24.0",
     "eslint-config-imperium": "^2.2.0",
     "husky": "^9.1.7",
-    "nodemon": "^3.1.9",
     "rimraf": "^6.0.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
     "typescript": "~5.8.3"
   },
   "engines": {
@@ -35,7 +32,7 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "dev": "nodemon",
+    "dev": "node --watch --import=tsx src/index.ts",
     "format": "eslint . --cache --fix",
     "lint": "tsc --noEmit && eslint . --cache",
     "prepare": "cd .. && husky bot/.husky",

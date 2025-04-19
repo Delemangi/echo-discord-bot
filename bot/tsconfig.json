@@ -29,10 +29,5 @@
   "exclude": [
     "dist",
     "eslint.config.js"
-  ],
-  "ts-node": {
-    "files": true,
-    "swc": true,
-    "transpileOnly": true
-  }
+  ]
 }
