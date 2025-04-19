@@ -11,9 +11,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.12.0",
-    "@strapi/plugin-users-permissions": "5.12.0",
-    "@strapi/strapi": "5.12.0",
+    "@strapi/plugin-cloud": "5.12.5",
+    "@strapi/plugin-users-permissions": "5.12.5",
+    "@strapi/strapi": "5.12.5",
     "pg": "8.13.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -21,13 +21,13 @@
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.10",
+    "@types/node": "^22.14.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
+    "node": "^20 || ^22",
     "npm": ">=6.0.0"
   },
   "strapi": {
