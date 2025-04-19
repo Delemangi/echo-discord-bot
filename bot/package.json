@@ -31,7 +31,7 @@
   "name": "echo-discord-bot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Delemangi/echo-discord-bot.git"
+    "url": "git+https://github.com/Delemangi/echo-discord-bot.git"
   },
   "scripts": {
     "build": "rimraf dist && tsc",
