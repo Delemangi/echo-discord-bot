@@ -12,6 +12,7 @@
   },
   "description": "Echo Discord Bot",
   "devDependencies": {
+    "esbuild": "^0.25.2",
     "eslint": "^9.25.0",
     "eslint-config-imperium": "^2.2.0",
     "husky": "^9.1.7",
@@ -31,8 +32,9 @@
     "url": "git+https://github.com/Delemangi/echo-discord-bot.git"
   },
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "npm run clean && node esbuild.config.js",
     "dev": "node --watch --import=tsx src/index.ts",
+    "clean": "rimraf dist",
     "format": "eslint . --cache --fix",
     "lint": "tsc --noEmit && eslint . --cache",
     "prepare": "cd .. && husky bot/.husky",
